@@ -24,30 +24,15 @@
          
          <div class="task">
            
-            <div class="task-item">
+            
+            <p class="empty-state"> Your to do list is empty. Hurray!</p>
+            <!-- <div class="task-item">
                <input type="checkbox"> 
                <label class="label-task">Drink Water</label>
                <input type="image" src="cancel.svg" class="icon">
-            </div>
+            </div> -->
 
-            <div class="task-item">
-                    <input type="checkbox"> 
-                    <label class="label-task">Build a todo list</label>
-                    <input type="image" src="cancel.svg" class="icon">
-                 </div>
-
-                 <div class="task-item">
-                        <input type="checkbox"> 
-                        <label class="label-task">Learn Javascript for 30 minutes</label>
-                        <input type="image" src="cancel.svg" class="icon">
-                     </div>
-
-                     <div class="task-item">
-                            <input type="checkbox"> 
-                            <label class="label-task">Learn Javascript for 30  and 40 minutes more</label>
-                            <input type="image" src="cancel.svg" class="icon">
-                         </div>
-         
+           
         </div>
 
     </div>
@@ -56,15 +41,15 @@
 
 <script>
 
-const taskItemContainer = document.querySelector(".task-item").getBoundingClientRect().width;
-const widthCheckBox = document.querySelector("input[type=checkbox]").getBoundingClientRect().width;
-const space = 20;
-const icons = document.querySelectorAll(".icon");
+// const taskItemContainer = document.querySelector(".task-item").getBoundingClientRect().width;
+// const widthCheckBox = document.querySelector("input[type=checkbox]").getBoundingClientRect().width;
+// const space = 20;
+// const icons = document.querySelectorAll(".icon");
 
-icons.forEach(icon=>
-{
-    icon.style.marginLeft = taskItemContainer - widthCheckBox - space + "px";
-})
+// icons.forEach(icon=>
+// {
+//     icon.style.marginLeft = taskItemContainer - widthCheckBox - space + "px";
+// })
 
 
 </script>

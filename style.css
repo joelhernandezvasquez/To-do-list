@@ -12,10 +12,10 @@ body
 {
     background:#f0f4f8;
 }
+
 i
 {
-    margin-right:10px;
-    
+    margin-right:10px;  
 }
 input[type="text"]
 {
@@ -31,16 +31,20 @@ input[type="checkbox"]
 {
     width:30px;
     height:30px;
-    margin-left:20px;
-    background-color: #eee;
+    margin-left:20px;   
+}
+
+input[type="checkbox"]:checked ~ .label-task
+{
+   text-decoration: line-through;
+   color:#bcccdc;
 }
 
 input[type="image"]
 {
     position:absolute;
     left:0px;
-    
-     
+    opacity: 0;   
 }
 
 #addTask
@@ -55,12 +59,13 @@ input[type="image"]
 {
     width:30px;
     height:30px;
+    opacity: 0;
 }
 .wrapper
 {
-    border:1px solid red;
+    /* border:1px solid red; */
     width: 60%;
-    height:500px;
+    
     margin-left:auto;
     margin-right:auto;
 
@@ -68,7 +73,7 @@ input[type="image"]
 
 .task-info-container
 {
-    border:1px solid red;
+    /* border:1px solid red; */
     width:75%;
     margin-left:0px;
     display: flex;
@@ -99,20 +104,20 @@ input[type="image"]
 
 .task
 {
- border:1px solid blue;
+ /* border:1px solid blue; */
  width:95%;
- height:300px;
+ 
  margin:20px;
  display:flex;
  flex-direction: column;
- 
+
 }
+
 
 .task-item
 {
     width:100%;
     border-radius:5px;
-    background:white;
     height:70px;
     display: flex;
     flex-direction: row;
@@ -121,8 +126,24 @@ input[type="image"]
     position:relative;
     
 }
+.task-item:hover 
+{
+    background:white;
+    
+}
+.task-item:hover .icon
+{
+    opacity: 1;
+}
 
 .label-task
 {
-    font-size:2rem;
+    font-size:1.8rem;
+    margin-left:5px;
+}
+
+.empty-state
+{
+    display:block;
+    font-size: 1.8rem;
 }
