@@ -3,12 +3,29 @@
 <head>
 <link href="style.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script>
+
+function positioningDeleteButton()
+{
+const taskItemContainer = document.querySelector(".task-item").getBoundingClientRect().width;
+const widthCheckBox = document.querySelector("input[type=checkbox]").getBoundingClientRect().width;
+const space = 20;
+const icons = document.querySelectorAll(".icon");
+
+icons.forEach(icon=>
+{
+    icon.style.marginLeft = taskItemContainer - widthCheckBox - space + "px";
+})
+
+}
+</script>
 </head>
 
 <body>
 
     
-    <form action="#" autocomplete="off">
+   
     <div class="wrapper">
      
          <div class="new-task">
@@ -17,7 +34,7 @@
             <label for="add-task" id="addTask"> ADD A TASK</label>
             <input type="text" name="add-task" placeholder="E.g Buy groceries"> 
            </div>
-            <button type="submit" class="btn-task btn"> <i class="fa fa-plus"></i>Add task</button>
+            <button class="btn-task btn"> <i class="fa fa-plus"></i>Add task</button>
          
          </div>
 
@@ -36,20 +53,81 @@
         </div>
 
     </div>
-</form>
+
 
 
 <script>
 
-// const taskItemContainer = document.querySelector(".task-item").getBoundingClientRect().width;
-// const widthCheckBox = document.querySelector("input[type=checkbox]").getBoundingClientRect().width;
-// const space = 20;
-// const icons = document.querySelectorAll(".icon");
+ const buttonAddTask = document.querySelector(".btn-task");
+ const taskContainer = document.querySelector(".task");
 
-// icons.forEach(icon=>
-// {
-//     icon.style.marginLeft = taskItemContainer - widthCheckBox - space + "px";
-// })
+
+ buttonAddTask.addEventListener("click",e=>
+ {
+    const emptyTextStatement = document.querySelector(".empty-state");
+    
+    // getting the input value
+    const userInput = document.querySelector("input[type=text]");
+    const taskText = userInput.value.trim(); 
+    
+
+    // Creating the elements dinamically 
+
+     // creating the div element, adding the styles and appending
+
+     if(taskText)
+     {
+     const parentContainer = document.querySelector(".task");
+     const divContainer = document.createElement("div");
+     divContainer.classList.add("task-item");
+     parentContainer.appendChild(divContainer);
+
+     // Creating the checkbox
+     const checkboxInput = document.createElement("input");
+     checkboxInput.type = "checkbox";
+
+    // Creating the label 
+    const labelInput = document.createElement("label");
+    labelInput.classList.add("label-task");
+    labelInput.textContent = taskText;
+
+    // Creating the delete button
+    const deleteButton = document.createElement("input");
+    deleteButton.type = "image";
+    deleteButton.src = "cancel.svg";
+    deleteButton.classList.add("icon");
+
+    // appending all elements to the div container
+    divContainer.appendChild(checkboxInput);
+    divContainer.appendChild(labelInput);
+    divContainer.appendChild(deleteButton);
+
+    emptyTextStatement.classList.add("hide");
+
+    positioningDeleteButton();
+
+  // clear the text input
+    userInput.value = "";
+    userInput.focus();
+     }
+
+ });
+
+ taskContainer.addEventListener("click",e=>
+ {
+    if(e.target.closest("input[type=image]"))
+    {
+      const divContainer = e.target.parentElement;
+      const parentContainer = divContainer.parentElement;
+      console.log(divContainer);
+      console.log(parentContainer);
+   
+
+    }
+ })
+ 
+
+
 
 
 </script>

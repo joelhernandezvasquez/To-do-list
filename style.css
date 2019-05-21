@@ -27,6 +27,7 @@ input[type="text"]
    color:white;
 }
 
+
 input[type="checkbox"]
 {
     width:30px;
@@ -63,7 +64,7 @@ input[type="image"]
 }
 .wrapper
 {
-    /* border:1px solid red; */
+    border:1px solid red;
     width: 60%;
     
     margin-left:auto;
@@ -73,7 +74,7 @@ input[type="image"]
 
 .task-info-container
 {
-    /* border:1px solid red; */
+    border:1px solid red;
     width:75%;
     margin-left:0px;
     display: flex;
@@ -104,9 +105,10 @@ input[type="image"]
 
 .task
 {
- /* border:1px solid blue; */
+
  width:95%;
- 
+ border:1px solid red;
+ height:50%;
  margin:20px;
  display:flex;
  flex-direction: column;
@@ -124,6 +126,7 @@ input[type="image"]
     align-items: center;
     margin-bottom: 5px;
     position:relative;
+   
     
 }
 .task-item:hover 
@@ -146,4 +149,7 @@ input[type="image"]
 {
     display:block;
     font-size: 1.8rem;
+    margin:0px;
 }
+.hide
+{display: none;}
