@@ -64,7 +64,7 @@ input[type="image"]
 }
 .wrapper
 {
-    border:1px solid red;
+   
     width: 60%;
     
     margin-left:auto;
@@ -74,7 +74,7 @@ input[type="image"]
 
 .task-info-container
 {
-    border:1px solid red;
+   
     width:75%;
     margin-left:0px;
     display: flex;
@@ -107,7 +107,6 @@ input[type="image"]
 {
 
  width:95%;
- border:1px solid red;
  height:50%;
  margin:20px;
  display:flex;
